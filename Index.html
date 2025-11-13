@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Senha por Pontuação</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🔐 Validador de Senha</h1>
+            <p class="subtitle">Digite uma senha para verificar sua força</p>
+            
+            <div class="input-group">
+                <input 
+                    type="password" 
+                    id="passwordInput" 
+                    placeholder="Digite sua senha aqui..."
+                    autocomplete="off"
+                />
+                <button id="togglePassword" class="toggle-btn" title="Mostrar/Ocultar senha">
+                    👁️
+                </button>
+            </div>
+
+            <div id="scoreContainer" class="score-container hidden">
+                <div class="score-bar-wrapper">
+                    <div id="scoreBar" class="score-bar"></div>
+                </div>
+                <div class="score-text">
+                    <span id="scoreLabel">Pontuação:</span>
+                    <span id="scoreValue">0/10</span>
+                </div>
+                <div id="strengthLabel" class="strength-label">Muito Fraca</div>
+            </div>
+
+            <div id="detailsContainer" class="details-container hidden">
+                <h3>Requisitos da Senha:</h3>
+                <ul class="requirements-list">
+                    <li id="lengthCheck" class="requirement">
+                        <span class="icon">⭕</span>
+                        <span>Mínimo de 8 caracteres</span>
+                    </li>
+                    <li id="upperCheck" class="requirement">
+                        <span class="icon">⭕</span>
+                        <span>Letra maiúscula (A-Z)</span>
+                    </li>
+                    <li id="lowerCheck" class="requirement">
+                        <span class="icon">⭕</span>
+                        <span>Letra minúscula (a-z)</span>
+                    </li>
+                    <li id="digitCheck" class="requirement">
+                        <span class="icon">⭕</span>
+                        <span>Número (0-9)</span>
+                    </li>
+                    <li id="symbolCheck" class="requirement">
+                        <span class="icon">⭕</span>
+                        <span>Símbolo (!@#$%^&*)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="errorMessage" class="error-message hidden"></div>
+        </div>
+
+        <footer class="footer">
+            <p>Desenvolvido com Azure Static Web Apps 🚀</p>
+        </footer>
+    </div>
+
+    <script src="assets/main.js"></script>
+</body>
+</html>

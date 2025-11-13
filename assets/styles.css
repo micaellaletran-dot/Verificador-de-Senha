@@ -1,0 +1,261 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+.card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 0.95em;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+#passwordInput {
+    width: 100%;
+    padding: 15px;
+    padding-right: 50px;
+    font-size: 16px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#passwordInput:focus {
+    border-color: #667eea;
+}
+
+.toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.toggle-btn:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.score-container {
+    margin-bottom: 25px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.score-bar-wrapper {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.score-bar {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.5s ease, background-color 0.3s ease;
+}
+
+.score-bar.very-weak {
+    background: linear-gradient(90deg, #ff4444, #cc0000);
+}
+
+.score-bar.weak {
+    background: linear-gradient(90deg, #ff6b6b, #ee5a24);
+}
+
+.score-bar.moderate {
+    background: linear-gradient(90deg, #feca57, #ff9ff3);
+}
+
+.score-bar.strong {
+    background: linear-gradient(90deg, #48dbfb, #0abde3);
+}
+
+.score-bar.very-strong {
+    background: linear-gradient(90deg, #1dd1a1, #10ac84);
+}
+
+.score-text {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #333;
+}
+
+.strength-label {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.strength-label.very-weak {
+    color: #cc0000;
+    background: #ffe0e0;
+}
+
+.strength-label.weak {
+    color: #ee5a24;
+    background: #ffe5cc;
+}
+
+.strength-label.moderate {
+    color: #f39c12;
+    background: #fff3cd;
+}
+
+.strength-label.strong {
+    color: #0abde3;
+    background: #d1f2ff;
+}
+
+.strength-label.very-strong {
+    color: #10ac84;
+    background: #d4f1e8;
+}
+
+.details-container {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.details-container h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.requirements-list {
+    list-style: none;
+}
+
+.requirement {
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.requirement .icon {
+    font-size: 20px;
+    min-width: 24px;
+}
+
+.requirement.met {
+    background: #d4f1e8;
+    color: #10ac84;
+}
+
+.requirement.not-met {
+    background: #ffe0e0;
+    color: #cc0000;
+}
+
+.error-message {
+    padding: 15px;
+    background: #ffe0e0;
+    color: #cc0000;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-size: 0.9em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .card {
+        padding: 25px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 0.85em;
+    }
+}
